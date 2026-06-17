@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Ahmad Muhardian</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#00b4d8,#03045e 60%),
+    linear-gradient(135deg,#001233,#000814);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* Grid futuristik */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-2;
+}
+
+/* Cahaya biru */
+body::after{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:#00d4ff;
+    border-radius:50%;
+    filter:blur(250px);
+    top:-250px;
+    right:-200px;
+    opacity:.15;
+    z-index:-1;
+}
+
+/* Navbar */
+nav{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto;
+    padding:18px 35px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#00d4ff;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00d4ff;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Garis */
+hr{
+    width:85%;
+    margin:30px auto;
+    border:none;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00d4ff,
+        transparent
+    );
+}
+
+/* Contact Card */
+.contact-container{
+    width:90%;
+    max-width:750px;
+    margin:50px auto;
+    padding:45px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.3);
+}
+
+/* Judul */
+h1{
+    text-align:center;
+    margin-bottom:15px;
+    font-size:3rem;
+    font-weight:800;
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #00d4ff,
+        #90e0ef
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.contact-info{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:35px;
+    line-height:1.7;
+}
+
+/* Label */
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#90e0ef;
+    font-weight:600;
+}
+
+/* Input */
+input,
+textarea{
+    width:100%;
+    padding:16px;
+    margin-bottom:22px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.08);
+    color:white;
+    font-size:15px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#94a3b8;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#00d4ff;
+    box-shadow:
+    0 0 20px rgba(0,212,255,.4);
+}
+
+/* Tombol */
+.btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:15px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(
+        90deg,
+        #0077b6,
+        #00b4d8
+    );
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+    0 10px 30px rgba(0,212,255,.4);
+}
+
+/* Footer */
+footer{
+    margin-top:50px;
+    text-align:center;
+    padding:25px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#94a3b8;
+}
+
+/* Efek cahaya */
+.glow{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(0,212,255,.08),
+        transparent 60%
+    );
+    animation:pulse 5s infinite;
+    pointer-events:none;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:.4;
+    }
+    50%{
+        opacity:1;
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .contact-container{
+        padding:30px;
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="glow"></div>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="cvirgi.pdf">Download CV</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="about.html">About Me</a>
+    </nav>
+
+    <hr>
+
+    <div class="contact-container">
+
+    <h1>🚢 Contact Engineer</h1>
+
+    <div class="contact-info">
+        <p>
+            Mari berdiskusi mengenai proyek, teknologi kelistrikan kapal,
+            sistem tenaga, maupun peluang kolaborasi profesional.
+        </p>
+    </div>
+
+        <form>
+
+            <label>Email</label>
+            <input
+                type="email"
+                name="email"
+                placeholder="Masukkan alamat email Anda">
+
+            <label>Pesan</label>
+            <textarea
+                name="message"
+                rows="6"
+                placeholder="Tulis pesan Anda di sini..."></textarea>
+
+            <button type="submit" class="btn">
+                Kirim Pesan
+            </button>
+
+        </form>
+        
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>Copyright &copy; 2025 Ahmad Irgi Romadhoni.</p>
+    </footer>
+
+</body>
+</html>

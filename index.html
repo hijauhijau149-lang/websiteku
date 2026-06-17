@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Irgi Romadhoni Personal Website</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#00b4d8,#03045e 60%),
+    linear-gradient(135deg,#001233,#000814);
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:#00d4ff;
+    border-radius:50%;
+    filter:blur(250px);
+    top:-250px;
+    right:-200px;
+    opacity:.15;
+    z-index:-1;
+}
+
+nav{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto;
+    padding:18px 35px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    width:0;
+    height:2px;
+    background:#00d4ff;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00d4ff;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+header{
+    text-align:center;
+    padding:70px 20px;
+}
+
+header img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #00d4ff;
+    box-shadow:
+    0 0 30px #00d4ff,
+    0 0 60px rgba(0,212,255,.5);
+    transition:.4s;
+}
+
+header img:hover{
+    transform:scale(1.08) rotate(3deg);
+}
+
+header h1{
+    margin-top:25px;
+    font-size:3.5rem;
+    font-weight:800;
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #00d4ff,
+        #90e0ef
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    margin-top:15px;
+    font-size:1.2rem;
+    color:#cbd5e1;
+}
+
+article{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+}
+
+article h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00d4ff;
+    font-size:2rem;
+}
+
+article p{
+    line-height:1.9;
+    text-align:center;
+    color:#e2e8f0;
+}
+
+div{
+    max-width:1000px !important;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    border-radius:25px;
+    overflow:hidden;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    color:white;
+    box-shadow:0 15px 50px rgba(0,0,0,.3);
+}
+
+thead{
+    background:linear-gradient(
+        90deg,
+        #0077b6,
+        #00b4d8
+    );
+}
+
+th{
+    padding:22px;
+    font-size:1.1rem;
+}
+
+td{
+    padding:25px;
+}
+
+tbody tr{
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+tbody tr:hover{
+    background:rgba(255,255,255,.08);
+}
+
+ul{
+    padding-left:20px;
+}
+
+ul li{
+    margin-bottom:10px;
+}
+
+hr{
+    width:85%;
+    margin:40px auto;
+    border:none;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00d4ff,
+        transparent
+    );
+}
+
+footer{
+    margin-top:60px;
+    text-align:center;
+    padding:30px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#94a3b8;
+}
+
+.lightning{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(0,212,255,.08),
+        transparent 60%
+    );
+    animation:pulse 5s infinite;
+    pointer-events:none;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:.4;
+    }
+    50%{
+        opacity:1;
+    }
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    header h1{
+        font-size:2.2rem;
+    }
+
+    header img{
+        width:170px;
+        height:170px;
+    }
+
+    article{
+        padding:25px;
+    }
+
+    th,td{
+        padding:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <div class="lightning"></div>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="cvirgi.pdf">Download CV</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="about.html">About me</a>
+    </nav>
+
+    <hr />
+
+    <header style="text-align: center;">
+        <img src="image/gik.jpeg" width="200" height="200" style="border-radius: 50%;"/>
+        <h1>⚓ Ahmad Irgi Romadhoni ⚓</h1>
+        <p>D4 Teknik Kelistrikan Kapal — Politeknik Perkapalan Negeri Surabaya</p>
+    </header>
+
+    <hr />
+
+    <article style="text-align: center;">
+        <h2>Overview</h2>
+        <p>
+            Mahasiswa D4 Teknik Kelistrikan Kapal yang berpengalaman di bidang
+            instalasi listrik dan motor listrik. Lulusan terbaik Teknik Instalasi
+            Tenaga Listrik SMK Negeri 1 Tuban, dengan pengalaman kerja sebagai
+            Supervisor di bengkel motor listrik.
+        </p>
+    </article>
+
+    <div style="max-width: 600px; margin: 3em auto">
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Keahlian</th>
+                    <th>Pengalaman</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Instalasi Listrik</li>
+                            <li>Pengoperasian Motor Listrik</li>
+                            <li>Penggulungan Motor Listrik</li>
+                            <li>Kepemimpinan Tim</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>SPV Bengkel Motor Listrik (2024)</li>
+                            <li>Ketua Sekbid OSIS SMP (2018)</li>
+                            <li>Anggota / Danton Paskib SMK (2023–2024)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+    <footer style="text-align: center;">
+        <p>Copyright &copy; 2025 Ahmad Irgi Romadhoni.</p>
+    </footer>
+</body>
+</html>

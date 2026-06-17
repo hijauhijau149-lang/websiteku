@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Ahmad Irgi Romadhoni</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#00b4d8,#03045e 60%),
+    linear-gradient(135deg,#001233,#000814);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* Grid futuristik */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-2;
+}
+
+/* Cahaya biru */
+body::after{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:#00d4ff;
+    border-radius:50%;
+    filter:blur(250px);
+    top:-250px;
+    right:-200px;
+    opacity:.15;
+    z-index:-1;
+}
+
+/* Navbar */
+nav{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto;
+    padding:18px 35px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#00d4ff;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00d4ff;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Garis */
+hr{
+    width:85%;
+    margin:30px auto;
+    border:none;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00d4ff,
+        transparent
+    );
+}
+
+/* About Card */
+article{
+    width:90%;
+    max-width:1000px;
+    margin:50px auto;
+    padding:45px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.3);
+}
+
+/* Judul */
+article h1{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:3rem;
+    font-weight:800;
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #00d4ff,
+        #90e0ef
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* Paragraf */
+article p{
+    font-size:1.05rem;
+    line-height:1.9;
+    margin-bottom:20px;
+    color:#dbeafe;
+    text-align:justify;
+}
+
+/* Video */
+.video-container{
+    margin-top:35px;
+    text-align:center;
+}
+
+video{
+    width:100%;
+    max-width:800px;
+    border-radius:20px;
+    border:2px solid rgba(0,212,255,.5);
+    box-shadow:
+    0 0 30px rgba(0,212,255,.3);
+    transition:.4s;
+}
+
+video:hover{
+    transform:scale(1.01);
+    box-shadow:
+    0 0 40px rgba(0,212,255,.5);
+}
+
+/* Footer */
+footer{
+    margin-top:50px;
+    text-align:center;
+    padding:25px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#94a3b8;
+}
+
+/* Glow */
+.glow{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(0,212,255,.08),
+        transparent 60%
+    );
+    animation:pulse 5s infinite;
+    pointer-events:none;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:.4;
+    }
+    50%{
+        opacity:1;
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    article{
+        padding:30px;
+    }
+
+    article h1{
+        font-size:2.2rem;
+    }
+
+    article p{
+        text-align:left;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="glow"></div>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="cvirgi.pdf">Download CV</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="about.html">About Me</a>
+    </nav>
+
+    <hr>
+
+    <article>
+        <h1>🚢 Marine Electrical Engineer</h1>
+
+        <p>
+            Halo, saya <strong>Ahmad Irgi Romadhoni</strong>, mahasiswa Program Studi
+            D4 Teknik Kelistrikan Kapal di Politeknik Perkapalan Negeri Surabaya (PPNS).
+            Saya memiliki minat yang besar pada sistem kelistrikan kapal, motor listrik,
+            distribusi tenaga, serta teknologi maritim modern.
+        </p>
+
+        <p>
+            Sebelum menempuh pendidikan di PPNS, saya merupakan lulusan terbaik
+            Konsentrasi Keahlian Teknik Instalasi Tenaga Listrik SMK Negeri 1 Tuban.
+            Pengalaman tersebut membentuk dasar kemampuan saya dalam instalasi,
+            perawatan, dan pengoperasian sistem kelistrikan.
+        </p>
+
+        <p>
+            Pada tahun 2024, saya dipercaya sebagai Supervisor di bengkel motor listrik,
+            bertanggung jawab dalam pengawasan pekerjaan, penggulungan motor listrik,
+            troubleshooting, serta koordinasi tim teknisi.
+        </p>
+
+        <p>
+            Saat ini saya terus mengembangkan kompetensi di bidang Marine Electrical
+            System, Power Distribution, Automation, dan Maintenance Engineering untuk
+            mempersiapkan diri menjadi profesional yang mampu berkontribusi dalam
+            industri maritim Indonesia maupun internasional.
+        </p>
+
+        <div class="video-container">
+            <video controls>
+                <source src="video/gik.MOV" type="video/webm">
+                Browser Anda tidak mendukung video.
+            </video>
+        </div>
+    </article>
+
+    <hr>
+
+    <footer>
+        <p>Copyright &copy; 2025 Ahmad Irgi Romadhoni.</p>
+    </footer>
+
+</body>
+</html>
